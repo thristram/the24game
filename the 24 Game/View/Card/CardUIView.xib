@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MontserratAlternates-Medium.otf">
+            <string>MontserratAlternates-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardView" customModule="the_24_Game" customModuleProvider="target">
+            <connections>
+                <outlet property="cardBGHoverView" destination="q2p-XT-dS5" id="6B0-yZ-3jM"/>
+                <outlet property="cardBGView" destination="SDu-z2-IPt" id="iHc-Yh-2U8"/>
+                <outlet property="cardBack" destination="hic-xQ-6dN" id="Obk-4d-MVm"/>
+                <outlet property="cardCover_1" destination="mhC-HS-l0h" id="rNl-9D-Ezo"/>
+                <outlet property="cardLeftBGView" destination="ZGA-q1-DQd" id="FAJ-dC-TQQ"/>
+                <outlet property="cardRank" destination="lBI-VD-fQU" id="SOH-Rv-S19"/>
+                <outlet property="cardRightBGView" destination="rC5-0i-yEq" id="Des-ac-UT3"/>
+                <outlet property="cardSuit" destination="sdR-5q-RaC" id="zxZ-TI-hKA"/>
+                <outlet property="cardSuitSmall" destination="uWo-oM-Buu" id="dlq-Cl-H6J"/>
+                <outlet property="cardTop" destination="lrt-JT-GLD" id="ueO-ZG-3IB"/>
+                <outlet property="cardView" destination="iN0-l3-epB" id="FCb-op-wjT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpringView" customModule="the_24_Game" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="164"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDu-z2-IPt">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="164"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC5-0i-yEq">
+                            <rect key="frame" x="59.5" y="0.0" width="60" height="164"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGA-q1-DQd">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="164"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit-spade" translatesAutoresizingMaskIntoConstraints="NO" id="sdR-5q-RaC" customClass="SpringImageView" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="20" y="62.5" width="79" height="79"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="sdR-5q-RaC" secondAttribute="height" multiplier="1:1" id="hFq-Lt-IGE"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2p-XT-dS5">
+                            <rect key="frame" x="59.5" y="0.0" width="60" height="164"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16829885563380281" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-top" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-JT-GLD" customClass="SpringImageView" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="-26" width="120" height="78.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="lrt-JT-GLD" secondAttribute="height" multiplier="2:1.3" id="9b5-5K-haG"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="suit-spade-colored" translatesAutoresizingMaskIntoConstraints="NO" id="uWo-oM-Buu" customClass="SpringImageView" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="92" y="8" width="20" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="7v0-fD-fIU"/>
+                                <constraint firstAttribute="width" constant="20" id="YFJ-3I-MKx"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-VD-fQU" customClass="SpringLabel" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="8" y="4" width="19.5" height="29.5"/>
+                            <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="24"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-circle" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-HS-l0h" customClass="SpringImageView" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="-65" y="-43" width="250" height="250"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="250" id="4tc-7X-0tl"/>
+                                <constraint firstAttribute="width" constant="250" id="VNV-jG-eNj"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-back" translatesAutoresizingMaskIntoConstraints="NO" id="hic-xQ-6dN" customClass="SpringImageView" customModule="the_24_Game" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="164"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="rC5-0i-yEq" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" id="2bQ-HZ-Uc0"/>
+                        <constraint firstAttribute="bottom" secondItem="ZGA-q1-DQd" secondAttribute="bottom" id="33p-6G-7t2"/>
+                        <constraint firstAttribute="trailing" secondItem="hic-xQ-6dN" secondAttribute="trailing" id="3NQ-vO-CjR"/>
+                        <constraint firstItem="mhC-HS-l0h" firstAttribute="centerX" secondItem="SDu-z2-IPt" secondAttribute="centerX" id="3VT-uZ-gpb"/>
+                        <constraint firstItem="rC5-0i-yEq" firstAttribute="leading" secondItem="ZGA-q1-DQd" secondAttribute="trailing" id="5A7-SZ-VLz"/>
+                        <constraint firstItem="lrt-JT-GLD" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" constant="-26" id="7Sf-Us-UGY"/>
+                        <constraint firstItem="lBI-VD-fQU" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" constant="4" id="7ok-FK-MKU"/>
+                        <constraint firstItem="hic-xQ-6dN" firstAttribute="leading" secondItem="SDu-z2-IPt" secondAttribute="leading" id="Ab3-wB-QRl"/>
+                        <constraint firstItem="ZGA-q1-DQd" firstAttribute="leading" secondItem="SDu-z2-IPt" secondAttribute="leading" id="BFR-Tq-tY8"/>
+                        <constraint firstItem="lBI-VD-fQU" firstAttribute="leading" secondItem="SDu-z2-IPt" secondAttribute="leading" constant="8" id="DfU-1D-xry"/>
+                        <constraint firstItem="q2p-XT-dS5" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" id="Efs-ri-cj9"/>
+                        <constraint firstItem="hic-xQ-6dN" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" id="Gxp-3B-L5x"/>
+                        <constraint firstAttribute="bottom" secondItem="hic-xQ-6dN" secondAttribute="bottom" id="Hfe-rk-CHt"/>
+                        <constraint firstAttribute="trailing" secondItem="q2p-XT-dS5" secondAttribute="trailing" id="Lrh-6h-bVy"/>
+                        <constraint firstAttribute="trailing" secondItem="rC5-0i-yEq" secondAttribute="trailing" id="Mck-bC-Mkc"/>
+                        <constraint firstItem="q2p-XT-dS5" firstAttribute="leading" secondItem="ZGA-q1-DQd" secondAttribute="trailing" id="Noj-FH-vGD"/>
+                        <constraint firstAttribute="trailing" secondItem="lrt-JT-GLD" secondAttribute="trailing" id="RBn-PV-fgK"/>
+                        <constraint firstItem="ZGA-q1-DQd" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" id="WZb-mC-vvr"/>
+                        <constraint firstItem="sdR-5q-RaC" firstAttribute="centerX" secondItem="SDu-z2-IPt" secondAttribute="centerX" id="Xbe-fn-iAr"/>
+                        <constraint firstItem="sdR-5q-RaC" firstAttribute="centerY" secondItem="SDu-z2-IPt" secondAttribute="centerY" constant="20" id="dIm-Nt-FkA"/>
+                        <constraint firstItem="q2p-XT-dS5" firstAttribute="width" secondItem="ZGA-q1-DQd" secondAttribute="width" id="eA8-w9-GRe"/>
+                        <constraint firstItem="mhC-HS-l0h" firstAttribute="centerY" secondItem="SDu-z2-IPt" secondAttribute="centerY" id="eoB-GG-7pV"/>
+                        <constraint firstAttribute="bottom" secondItem="q2p-XT-dS5" secondAttribute="bottom" id="gQA-1A-Gee"/>
+                        <constraint firstItem="uWo-oM-Buu" firstAttribute="top" secondItem="SDu-z2-IPt" secondAttribute="top" constant="8" id="kC8-6l-kpJ"/>
+                        <constraint firstAttribute="bottom" secondItem="rC5-0i-yEq" secondAttribute="bottom" id="m1l-TG-OeD"/>
+                        <constraint firstItem="lrt-JT-GLD" firstAttribute="leading" secondItem="SDu-z2-IPt" secondAttribute="leading" id="paJ-11-nTT"/>
+                        <constraint firstItem="sdR-5q-RaC" firstAttribute="leading" secondItem="SDu-z2-IPt" secondAttribute="leading" constant="20" id="pit-4S-HbU"/>
+                        <constraint firstAttribute="trailing" secondItem="uWo-oM-Buu" secondAttribute="trailing" constant="8" id="w7S-09-Eft"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SDu-z2-IPt" secondAttribute="trailing" id="DCP-wv-w3q"/>
+                <constraint firstItem="SDu-z2-IPt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mFe-cG-VNw"/>
+                <constraint firstAttribute="bottom" secondItem="SDu-z2-IPt" secondAttribute="bottom" id="nR6-gF-ANG"/>
+                <constraint firstItem="SDu-z2-IPt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uuD-b6-K0e"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="39.5" y="-36"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="card-back" width="2400" height="2400"/>
+        <image name="card-top" width="3000" height="1500"/>
+        <image name="icon-circle" width="1500" height="1500"/>
+        <image name="suit-spade" width="1500" height="1500"/>
+        <image name="suit-spade-colored" width="1500" height="1500"/>
+    </resources>
+</document>
