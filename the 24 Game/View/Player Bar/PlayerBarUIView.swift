@@ -17,8 +17,11 @@ class PlayerBarUIView: UIView {
     @IBOutlet weak var playerImageView: UIImageView!
     @IBAction func playerBarPressed(_ sender: Any) {
         if #available(iOS 10.0, *) {
-            let generator = UIImpactFeedbackGenerator(style: .medium)
-            generator.impactOccurred()
+            if !TFGame.settings.notUseTaptic{
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+            }
+            
             
         } else {
             // Fallback on earlier versions

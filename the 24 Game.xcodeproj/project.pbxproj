@@ -34,6 +34,8 @@
 		7F46B4F9208A788F006B4012 /* StatisticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F46B4F7208A788F006B4012 /* StatisticsCollectionViewCell.xib */; };
 		7F46B504208B2705006B4012 /* SSPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B503208B2705006B4012 /* SSPModel.swift */; };
 		7F46B508208B2A67006B4012 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F46B507208B2A67006B4012 /* GoogleService-Info.plist */; };
+		7F46B50F208B31FF006B4012 /* SettingsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46B50D208B31FF006B4012 /* SettingsHeaderCollectionReusableView.swift */; };
+		7F46B510208B31FF006B4012 /* SettingsHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F46B50E208B31FF006B4012 /* SettingsHeaderCollectionReusableView.xib */; };
 		7F533A7A2088B865000A4293 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F533A792088B865000A4293 /* CardView.swift */; };
 		7F533A7C2088B876000A4293 /* CardUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F533A7B2088B876000A4293 /* CardUIView.xib */; };
 		7F533A7F2088CFA9000A4293 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F533A7E2088CFA9000A4293 /* Montserrat-Medium.otf */; };
@@ -148,6 +150,10 @@
 		7F46B4F7208A788F006B4012 /* StatisticsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsCollectionViewCell.xib; sourceTree = "<group>"; };
 		7F46B503208B2705006B4012 /* SSPModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPModel.swift; sourceTree = "<group>"; };
 		7F46B507208B2A67006B4012 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F46B50D208B31FF006B4012 /* SettingsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		7F46B50E208B31FF006B4012 /* SettingsHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		7F46B526208B34A3006B4012 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		7F46B527208B34A3006B4012 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7F533A792088B865000A4293 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7F533A7B2088B876000A4293 /* CardUIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardUIView.xib; sourceTree = "<group>"; };
 		7F533A7E2088CFA9000A4293 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				7F46B4F5208A7846006B4012 /* Player Bar */,
 				7F46B4F6208A788F006B4012 /* StatisticsCollectionViewCell.swift */,
 				7F46B4F7208A788F006B4012 /* StatisticsCollectionViewCell.xib */,
+				7F46B50D208B31FF006B4012 /* SettingsHeaderCollectionReusableView.swift */,
+				7F46B50E208B31FF006B4012 /* SettingsHeaderCollectionReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -687,6 +695,7 @@
 				7F46B4E52089D2FE006B4012 /* SmallCardView.xib in Resources */,
 				7F46B508208B2A67006B4012 /* GoogleService-Info.plist in Resources */,
 				7F46B4DE2089CDE2006B4012 /* HistoryCollectionCell.xib in Resources */,
+				7F46B510208B31FF006B4012 /* SettingsHeaderCollectionReusableView.xib in Resources */,
 				7F46B4F9208A788F006B4012 /* StatisticsCollectionViewCell.xib in Resources */,
 				7F46B4CF2089B952006B4012 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
@@ -843,6 +852,7 @@
 				7F533B822089188E000A4293 /* Easing.swift in Sources */,
 				7F533B372088FE75000A4293 /* UIColorExtensions.swift in Sources */,
 				7F533B852089188E000A4293 /* MIBlurPopup.swift in Sources */,
+				7F46B50F208B31FF006B4012 /* SettingsHeaderCollectionReusableView.swift in Sources */,
 				7F533B872089188E000A4293 /* String+LocalizeTableName.swift in Sources */,
 				7F533B892089188E000A4293 /* String+LocalizeBundle.swift in Sources */,
 				7F533B292088DD62000A4293 /* DesignableTabBarController.swift in Sources */,
@@ -892,6 +902,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7F5F49CC20887CD300845DF8 /* Base */,
+				7F46B526208B34A3006B4012 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -900,6 +911,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7F5F49D120887CD500845DF8 /* Base */,
+				7F46B527208B34A3006B4012 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -911,6 +923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -971,6 +984,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

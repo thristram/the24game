@@ -84,7 +84,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView!.register(UINib(nibName: "LevelSelectCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        
+        self.collectionView!.register(UINib(nibName: "SettingsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SettingsHeader")
         self.newGameButton.layer.cornerRadius = 8
         self.newGameButton.backgroundColor = UIColor.mineLoverGrey
         self.newGameButton.clipsToBounds = true
@@ -106,40 +106,101 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return self.items.count
+        default:
+            return 0
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        if(section == 0){
+            return CGSize(width: UIScreen.main.bounds.width, height: 0)
+            
+        }   else{
+            return CGSize(width: UIScreen.main.bounds.width, height: 52)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingsHeader", for: indexPath as IndexPath) as! SettingsHeaderCollectionReusableView
+        headerView.sectionTitle.text = "Number of Players"
+        return headerView
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! LevelSelectCollectionViewCell
         let index = indexPath.item
-        let level = TFGame.PlayerSystem.acceptedPlaysers
-        let cellLevel = level[index]
-        if cellLevel == 1{
-            cell.cellTitle.text = "\(cellLevel) Player"
-        }   else    {
-            cell.cellTitle.text = "\(cellLevel) Players"
-        }
-        
-        cell.cellView.clipsToBounds = true
-        cell.cellView.layer.cornerRadius = 8
-        cell.cellView.backgroundColor = UIColor.mineLoverLightBlack
-        
-        
-        if self.selectedLevel == cellLevel{
-            cell.cellView.layer.borderColor = UIColor.seraphOrange.cgColor
-        }   else    {
+        switch indexPath.section{
+        case 0:
+            cell.cellView.clipsToBounds = true
+            cell.cellView.layer.cornerRadius = 8
+            cell.cellView.backgroundColor = UIColor.mineLoverLightBlack
             cell.cellView.layer.borderColor = UIColor.clear.cgColor
+            if TFGame.settings.notUseTaptic{
+                cell.cellTitle.text = "Use Haptics: OFF"
+                cell.cellImage.image = #imageLiteral(resourceName: "Icon-hatpic-off")
+            }   else    {
+                cell.cellTitle.text = "Use Haptics: ON"
+                cell.cellImage.image = #imageLiteral(resourceName: "Icon-hatpic-on")
+            }
+            return cell
+        case 1:
+            let level = TFGame.PlayerSystem.acceptedPlaysers
+            let cellLevel = level[index]
+            if cellLevel == 1{
+                cell.cellTitle.text = "\(cellLevel) Player"
+            }   else    {
+                cell.cellTitle.text = "\(cellLevel) Players"
+            }
+            
+            cell.cellView.clipsToBounds = true
+            cell.cellView.layer.cornerRadius = 8
+            cell.cellView.backgroundColor = UIColor.mineLoverLightBlack
+            
+            cell.cellImage.image = #imageLiteral(resourceName: "Icon-cards")
+            if self.selectedLevel == cellLevel{
+                cell.cellView.layer.borderColor = UIColor.seraphOrange.cgColor
+            }   else    {
+                cell.cellView.layer.borderColor = UIColor.clear.cgColor
+            }
+            
+            return cell
+        default:
+            return cell
         }
         
-        return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        self.selectedLevel = self.items[index]
-        self.collectionView.reloadData()
-        self.updateNewGameButton()
+        switch indexPath.section{
+        case 0:
+            if TFGame.settings.notUseTaptic {
+                if #available(iOS 10.0, *) {
+                    let generator = UIImpactFeedbackGenerator(style: .medium)
+                    generator.impactOccurred()
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+            }
+            TFGame.settings.setTaptic()
+            self.collectionView.reloadData()
+            break
+        case 1:
+            self.selectedLevel = self.items[index]
+            self.collectionView.reloadData()
+            self.updateNewGameButton()
+            break
+        default:
+            break
+        }
+        
         
     }
     func updateNewGameButton(){

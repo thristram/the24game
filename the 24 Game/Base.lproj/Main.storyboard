@@ -620,7 +620,7 @@
         <!--Settings About View Controller-->
         <scene sceneID="7rx-p6-vd0">
             <objects>
-                <viewController id="LZv-7J-4Ya" customClass="SettingsAboutViewController" customModule="Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LZv-7J-4Ya" customClass="SettingsAboutViewController" customModule="the_24_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dmc-JT-Wnp"/>
                         <viewControllerLayoutGuide type="bottom" id="DH4-jO-e9Z"/>
@@ -748,7 +748,7 @@
         <!--History View Controller-->
         <scene sceneID="LOR-lE-lle">
             <objects>
-                <viewController storyboardIdentifier="History" id="ePG-OB-YLL" customClass="HistoryViewController" customModule="Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="History" id="ePG-OB-YLL" customClass="HistoryViewController" customModule="the_24_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WDD-sT-dgH"/>
                         <viewControllerLayoutGuide type="bottom" id="rKT-7a-Wk7"/>
@@ -864,7 +864,7 @@
         <!--Level Select View Controller-->
         <scene sceneID="iLW-Fq-vtW">
             <objects>
-                <viewController storyboardIdentifier="levelSelect" id="Lv4-6P-0zP" customClass="LevelSelectViewController" customModule="Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="levelSelect" id="Lv4-6P-0zP" customClass="LevelSelectViewController" customModule="the_24_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bQm-D2-yri"/>
                         <viewControllerLayoutGuide type="bottom" id="9gv-qG-ltd"/>
@@ -902,8 +902,8 @@
                                             <action selector="dismissView:" destination="Lv4-6P-0zP" eventType="touchUpInside" id="2VX-Qk-Omc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# OF PLAYERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80J-Sy-U0x">
-                                        <rect key="frame" x="70" y="14" width="194" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80J-Sy-U0x">
+                                        <rect key="frame" x="70" y="14" width="137" height="41"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

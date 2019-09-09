@@ -10,6 +10,7 @@ target 'the 24 Game' do
   pod 'Firebase/AdMob'
   
   pod 'SwiftHTTP'
+  pod 'Localize-Swift'
 
   target 'the 24 GameTests' do
     inherit! :search_paths

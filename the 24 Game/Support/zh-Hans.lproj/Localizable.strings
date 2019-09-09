@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  the 24 Game
+
+  Created by Fangchen Li on 4/21/18.
+  Copyright © 2018 Fangchen Li. All rights reserved.
+*/
+"1 Player" = "单人游戏";
+"2 Players" = "双人游戏";
+"3 Players" = "三人游戏";
+"4 Players" = "四人游戏";
+
+"Number of Players" = "玩家总数";
+
+"Use Haptics: ON" = "触摸力反馈: 开启";
+"Use Haptics: OFF" = "触摸力反馈: 关闭";
+
+"RESUME" = "返回游戏";
+"NEW GAME" = "新游戏";
+
+" ago" = "前";
+"Just now" = "刚刚";

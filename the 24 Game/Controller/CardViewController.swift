@@ -243,8 +243,11 @@ class CardViewController: UIViewController, FaveButtonDelegate {
             when = when + Double(delay)
             DispatchQueue.main.asyncAfter(deadline: when) {
                 if #available(iOS 10.0, *) {
-                    let generator = UIImpactFeedbackGenerator(style: .light)
-                    generator.impactOccurred()
+                    if !TFGame.settings.notUseTaptic{
+                        let generator = UIImpactFeedbackGenerator(style: .light)
+                        generator.impactOccurred()
+                    }
+                    
                 
                 } else {
                     // Fallback on earlier versions

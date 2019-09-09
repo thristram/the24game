@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Solution"; ObjectID = "037-cx-YKf"; */
+"037-cx-YKf.text" = "Solution";
+
+/* Class = "UILabel"; text = "v1.0 Build 30"; ObjectID = "3Df-I3-OTl"; */
+"3Df-I3-OTl.text" = "v1.0 Build 30";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "3iY-Do-he3"; */
+"3iY-Do-he3.text" = "设置";
+
+/* Class = "UILabel"; text = "Play"; ObjectID = "5qC-YI-ZKC"; */
+"5qC-YI-ZKC.text" = "新游戏";
+
+/* Class = "UILabel"; text = "SETTINGS"; ObjectID = "80J-Sy-U0x"; */
+"80J-Sy-U0x.text" = "设置";
+
+/* Class = "UILabel"; text = "History"; ObjectID = "Fwa-tD-8Lb"; */
+"Fwa-tD-8Lb.text" = "历史记录";
+
+/* Class = "UIButton"; normalTitle = "NEW GAME"; ObjectID = "GpZ-dy-5EO"; */
+"GpZ-dy-5EO.normalTitle" = "新游戏";
+
+/* Class = "UILabel"; text = "All Rights Reserved."; ObjectID = "HrM-re-ZCI"; */
+"HrM-re-ZCI.text" = "All Rights Reserved.";
+
+/* Class = "UILabel"; text = "24 Game"; ObjectID = "JOW-Dr-o2A"; */
+"JOW-Dr-o2A.text" = "24 Game";
+
+/* Class = "UIButton"; normalTitle = "Got it Wrong?"; ObjectID = "Kc9-Gw-s67"; */
+"Kc9-Gw-s67.normalTitle" = "算错了?";
+
+/* Class = "UILabel"; text = "Copyright © 2018 Fangchen Li"; ObjectID = "LOl-vp-EGD"; */
+"LOl-vp-EGD.text" = "Copyright © 2018 Fangchen Li";
+
+/* Class = "UILabel"; text = "Info"; ObjectID = "YaY-GT-jaf"; */
+"YaY-GT-jaf.text" = "关于";
+
+/* Class = "UILabel"; text = "ABOUT"; ObjectID = "hdZ-4f-NaS"; */
+"hdZ-4f-NaS.text" = "关于";
+
+/* Class = "UILabel"; text = "HISTORY"; ObjectID = "jFm-jS-oye"; */
+"jFm-jS-oye.text" = "历史记录";
+
+/* Class = "UILabel"; text = "Solution"; ObjectID = "y6J-SS-2QN"; */
+"y6J-SS-2QN.text" = "答案";

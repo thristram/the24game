@@ -117,6 +117,17 @@ class MobileDevice {
         SSP.reportDeviceIdentity()
     }
 }
+class Settings{
+    var notUseTaptic: Bool = false
+    
+    init(){
+        self.notUseTaptic = UserDefaults.standard.bool(forKey: "notUseTaptic")
+    }
+    func setTaptic(){
+        self.notUseTaptic = !self.notUseTaptic
+        UserDefaults.standard.set(self.notUseTaptic, forKey: "settings_notUseTaptic")
+    }
+}
 class SingleGame{
     var cards: [Card] = []
     var initTime: Int = 0
@@ -198,6 +209,7 @@ class the24Game{
     var RecordSystem: Record = Record()
     var PlayerSystem: Players = Players()
     var mobileDevice = MobileDevice()
+    var settings = Settings()
     
     init(){
         self.initUI()
