@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         //        AnalyticsConfiguration.shared().setAnalyticsCollectionEnabled(false)
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("i am not available in simulator \(error)")
         TFGame.mobileDevice.failToGetAPNS()
     }
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
             let webpageURL: URL? = userActivity.webpageURL
             let host: String? = webpageURL?.host

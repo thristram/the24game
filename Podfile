@@ -11,6 +11,9 @@ target 'the 24 Game' do
   
   pod 'SwiftHTTP'
   pod 'Localize-Swift'
+  pod 'SwiftyJSON'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'FaveButton'
 
   target 'the 24 GameTests' do
     inherit! :search_paths

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlayerBarUIView: UIView {
 
@@ -70,6 +71,7 @@ class PlayerBarUIView: UIView {
                 }
             }
         }
+        Analytics.logEvent("Player_\(self.playerNumber)_Pushed", parameters: nil)
     }
     @objc func otherPlayerWrong(_ notification: Notification) {
         if let userInfo = notification.userInfo {

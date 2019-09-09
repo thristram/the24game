@@ -8,11 +8,12 @@
 
 import Foundation
 import SwiftHTTP
+import SwiftyJSON
 
 class SeraphSystemProtocol{
     var baseURL: String = "http://raspberrypi.local:20002"
-    var remoteBaseURL: String = "https://seraph.applicationclick.com/the24"
-    var remoteBase: String = "https://seraph.applicationclick.com"
+    var remoteBaseURL: String = "https://api.seraphtechnology.com/the24"
+    var remoteBase: String = "https://api.seraphtechnology.com"
     var localFailCount: Int = 0
     var maxLocalFailCount: Int = 3
     var firstNotification: Bool = true
@@ -74,17 +75,8 @@ class SeraphSystemProtocol{
                 
             }
             
-            var opt: HTTP
-            switch method{
-            case "POST":
-                opt = HTTP.POST(apiBase + url, parameters: param)!
-                break
-            default:
-                opt = HTTP.GET(apiBase + url, parameters: param)!
-                break
-            }
-            //print("requesting " + apiBase + url)
-            opt.run { response in
+            
+            HTTP.GET(apiBase + url, parameters: param) { response in
                 //print("Response From \(response.URL)")
                 if let err = response.error {
                     print("error: \(err.localizedDescription)")
@@ -95,17 +87,14 @@ class SeraphSystemProtocol{
                     completion(false, Data())
                     return //also notify app of failure as needed
                 }
+                
                 completion(true, response.data)
                 if(apiBase == self.baseURL){
                     self.localFailCount = 0
                 }
                 
-                //print("opt finished: \(response.description)")
-                //print("data is: \(response.data)") access the response of the data with response.data
             }
-        } catch let error {
-            completion(false, Data())
-            print("got an error creating the request: \(error)")
+            
         }
     }
 

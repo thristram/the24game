@@ -15,7 +15,7 @@
 "80J-Sy-U0x.text" = "设置";
 
 /* Class = "UILabel"; text = "History"; ObjectID = "Fwa-tD-8Lb"; */
-"Fwa-tD-8Lb.text" = "历史记录";
+"Fwa-tD-8Lb.text" = "历史";
 
 /* Class = "UIButton"; normalTitle = "NEW GAME"; ObjectID = "GpZ-dy-5EO"; */
 "GpZ-dy-5EO.normalTitle" = "新游戏";

@@ -24,7 +24,7 @@ class SettingsAboutViewController: UIViewController,  MIBlurPopupDelegate {
     var popupView: UIView {
         return self.content
     }
-    var blurEffectStyle: UIBlurEffectStyle {
+    var blurEffectStyle: UIBlurEffect.Style {
         return .dark
     }
     var initialScaleAmmount: CGFloat {

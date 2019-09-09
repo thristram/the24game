@@ -88,6 +88,19 @@ public extension UIDevice {
             return false
         }
     }
+    var isMax: Bool{
+        if UIScreen.main.bounds.height == 896{
+            return true
+        }   else{
+            return false
+        }
+    }
+    var isNotch: Bool {
+        if self.isX || self.isMax{
+            return true
+        }
+        return false
+    }
     var isiPad: Bool{
         let ss = self.screenSize
         if (ss == .iPad) || (ss == .iPad10) || ( ss == .iPad12){
@@ -105,6 +118,7 @@ public extension UIDevice {
         case iPad
         case iPad10
         case iPad12
+        case iPhoneXsMax
     }
     var HDIdentifier: String{
         
@@ -130,6 +144,8 @@ public extension UIDevice {
             return .iPhonePlus
         case 812:
             return .iPhoneX
+        case 896:
+            return .iPhoneXsMax
         case 768:
             print("iPad")
             return .iPad

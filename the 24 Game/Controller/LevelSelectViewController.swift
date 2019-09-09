@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Localize_Swift
 
 class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MIBlurPopupDelegate {
     
@@ -58,7 +59,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     var popupView: UIView {
         return self.collectionView
     }
-    var blurEffectStyle: UIBlurEffectStyle {
+    var blurEffectStyle: UIBlurEffect.Style {
         return .dark
     }
     var initialScaleAmmount: CGFloat {
@@ -84,7 +85,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView!.register(UINib(nibName: "LevelSelectCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.register(UINib(nibName: "SettingsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "SettingsHeader")
+        self.collectionView!.register(UINib(nibName: "SettingsHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SettingsHeader")
         self.newGameButton.layer.cornerRadius = 8
         self.newGameButton.backgroundColor = UIColor.mineLoverGrey
         self.newGameButton.clipsToBounds = true
@@ -129,7 +130,7 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SettingsHeader", for: indexPath as IndexPath) as! SettingsHeaderCollectionReusableView
-        headerView.sectionTitle.text = "Number of Players"
+        headerView.sectionTitle.text = "Number of Players".localized()
         return headerView
         
     }
@@ -143,10 +144,10 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
             cell.cellView.backgroundColor = UIColor.mineLoverLightBlack
             cell.cellView.layer.borderColor = UIColor.clear.cgColor
             if TFGame.settings.notUseTaptic{
-                cell.cellTitle.text = "Use Haptics: OFF"
+                cell.cellTitle.text = "Use Haptics: OFF".localized()
                 cell.cellImage.image = #imageLiteral(resourceName: "Icon-hatpic-off")
             }   else    {
-                cell.cellTitle.text = "Use Haptics: ON"
+                cell.cellTitle.text = "Use Haptics: ON".localized()
                 cell.cellImage.image = #imageLiteral(resourceName: "Icon-hatpic-on")
             }
             return cell
@@ -154,9 +155,9 @@ class LevelSelectViewController: UIViewController, UICollectionViewDelegate, UIC
             let level = TFGame.PlayerSystem.acceptedPlaysers
             let cellLevel = level[index]
             if cellLevel == 1{
-                cell.cellTitle.text = "\(cellLevel) Player"
+                cell.cellTitle.text = "\(cellLevel) Player".localized()
             }   else    {
-                cell.cellTitle.text = "\(cellLevel) Players"
+                cell.cellTitle.text = "\(cellLevel) Players".localized()
             }
             
             cell.cellView.clipsToBounds = true

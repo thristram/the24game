@@ -1,4 +1,5 @@
 PODS:
+  - FaveButton (3.0.0)
   - Firebase/AdMob (4.6.0):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.25.0)
@@ -17,39 +18,62 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.3)
   - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
     - GoogleToolboxForMac/Defines (= 2.1.3)
+  - Localize-Swift (2.0.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Spring (1.0.6)
   - SwiftHTTP (3.0.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - FaveButton
   - Firebase/AdMob
   - Firebase/Core
+  - Localize-Swift
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftHTTP
+  - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
+    - FaveButton
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
     - Google-Mobile-Ads-SDK
     - GoogleToolboxForMac
+    - Localize-Swift
     - nanopb
     - SwiftHTTP
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  FaveButton: 1fa9cd7b037d7164e229765401931271adbe3a23
   Firebase: 27321a925aa85520618255a7c630859e0502ccbd
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
   FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
   Google-Mobile-Ads-SDK: 113804f266381a30f982ad3c18063d4e0155414f
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftHTTP: b8845e1058010e98a818a09c44568aee8c50e05a
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 2e71ba7fccb01e47d1d426760efdd8d5813077fc
+PODFILE CHECKSUM: 58171f9773c505c0d713b22efb5d147180687c1e
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

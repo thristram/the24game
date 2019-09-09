@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class CardView: SpringView {
     
@@ -101,7 +102,7 @@ class CardView: SpringView {
         self.cardCover_1.alpha = 1
     }
     func initAnimationSettings(delayLevel: Int = 0){
-        let delay: CGFloat = 1.3
+        let delay: CGFloat = 1.0
         self.cardCover_1.alpha = 1
         self.cardCover_1.transform = CGAffineTransform(scaleX: 1, y: 1)
         
@@ -124,20 +125,20 @@ class CardView: SpringView {
         
         self.cardTop.animation = "slideDown"
         self.cardTop.curve = "easeIn"
-        self.cardTop.duration = 1
-        self.cardTop.delay = delay
+        self.cardTop.duration = 0.6
+        self.cardTop.delay = delay - 0.2
         
         self.cardRank.animation = "fadeIn"
         self.cardRank.curve = "easeIn"
-        self.cardRank.duration = 1
+        self.cardRank.duration = 0.7
         self.cardRank.y = 15
-        self.cardRank.delay = delay + 0.7
+        self.cardRank.delay = delay + 0.2
         
         self.cardSuitSmall.animation = "fadeIn"
         self.cardSuitSmall.curve = "easeIn"
-        self.cardSuitSmall.duration = 1
+        self.cardSuitSmall.duration = 0.7
         self.cardSuitSmall.y = 15
-        self.cardSuitSmall.delay = delay + 0.7
+        self.cardSuitSmall.delay = delay + 0.2
     }
     func startAnimation(completion: @escaping () -> Void){
         
@@ -146,7 +147,7 @@ class CardView: SpringView {
         self.cardTop.animate()
         self.cardRank.animate()
         self.cardSuitSmall.animateNext {
-            //                self.cardCover_1.alpha = 0
+            
             
             
         }

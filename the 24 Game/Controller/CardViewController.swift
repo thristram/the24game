@@ -7,7 +7,11 @@
 //
 
 import UIKit
-let gameSolver = Solver()
+import Firebase
+import Spring
+import FaveButton
+import Localize_Swift
+
 class CardViewController: UIViewController, FaveButtonDelegate {
 
     @IBOutlet weak var card_1: CardView!
@@ -43,6 +47,12 @@ class CardViewController: UIViewController, FaveButtonDelegate {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var rollButtonBGHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var tipsView: UIView!
+    @IBOutlet weak var hideTipsButton: UIButton!
+    @IBOutlet weak var tipsViewTitle: UILabel!
+    @IBOutlet weak var tipsViewText: UILabel!
+    
+    
     var ifLocked: Bool = false
     var rolling:Bool = false
     let colors = [
@@ -62,6 +72,7 @@ class CardViewController: UIViewController, FaveButtonDelegate {
     @IBAction func gotWrong(_ sender: Any) {
         
         if TFGame.currentGame.winner != 0{
+            Analytics.logEvent("Player_\(TFGame.currentGame.winner)_Wrong", parameters: nil)
             TFGame.PlayerSystem.getPlayer(number: TFGame.currentGame.winner).currentState = .wrong
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "otherPlayerWong"), object: nil, userInfo: ["player": TFGame.currentGame.winner])
             
@@ -75,8 +86,10 @@ class CardViewController: UIViewController, FaveButtonDelegate {
             }
         }
         
+        
         if totalWrong == TFGame.PlayerSystem.numberOfPlayers{
             self.showAnswer()
+            Analytics.logEvent("AllWrong", parameters: nil)
         }
     }
     func showAnswer(){
@@ -95,6 +108,20 @@ class CardViewController: UIViewController, FaveButtonDelegate {
             self.lockButton.isSelected = false
             self.lockButtonText.textColor = UIColor.TFButtonText
         }
+        Analytics.logEvent("ShowSolution", parameters: nil)
+    }
+    func showTips(){
+        self.tipsView.isHidden = false
+        self.tipsViewTitle.text = "TIPS".localized()
+        self.tipsViewText.text = "Whoever got it right first, Press the handle!".localized()
+        self.hideTipsButton.setTitle("GOT IT".localized(), for: .normal)
+    }
+    func hideTips(){
+        self.tipsView.isHidden = true
+        TFGame.settings.setTurtorialShown()
+    }
+    @IBAction func hideTipsButtonPressed(_ sender: Any) {
+        self.hideTips()
     }
     @IBAction func SettingsOuterButtonPressed(_ sender: Any) {
         self.settingsButton.sendActions(for: .touchUpInside)
@@ -129,6 +156,7 @@ class CardViewController: UIViewController, FaveButtonDelegate {
         self.rollButton.isEnabled = false
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gamePlayerReset"), object: nil)
         self.wrongButtonContainer.isHidden = true
+        Analytics.logEvent("RollCards", parameters: nil)
     }
     @IBAction func clickSettingsButton(_ sender: Any) {
         performSegue(withIdentifier: "jumpToLevelSelect", sender: nil)
@@ -270,6 +298,10 @@ class CardViewController: UIViewController, FaveButtonDelegate {
                     }
                 })
                 self.enableReRollButton()
+                if !TFGame.settings.isTurtorialShown{
+                    self.showTips()
+                }
+                
             }
             
             
@@ -354,6 +386,10 @@ class CardViewController: UIViewController, FaveButtonDelegate {
         self.lockButton.setBackgroundImage(UIImage(named: "Icon-solution-selected"), for: .selected)
         NotificationCenter.default.addObserver(self, selector: #selector(self.playerPushed(_:)), name: NSNotification.Name(rawValue: "playerPushed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.menuDidConfig), name: NSNotification.Name(rawValue: "menuDidConfig"), object: nil)
+        self.hideTipsButton.layer.borderWidth = 1
+        self.hideTipsButton.layer.borderColor = UIColor.white.cgColor
+        self.hideTipsButton.clipsToBounds = true
+        self.hideTipsButton.layer.cornerRadius = 8
        
     }
     @objc func menuDidConfig(){

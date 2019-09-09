@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import Localize_Swift
 
 
 class publicMethod{
     func processAttributedString(input: String, fontsize: CGFloat = 28, numberOfWords: Int = 1) -> NSMutableAttributedString{
-        let lightFont = [NSAttributedStringKey.font: UIFont(name: "OpenSans-Light", size: fontsize)!, NSAttributedStringKey.foregroundColor: UIColor.white]
-        let boldFont = [NSAttributedStringKey.font: UIFont(name: "OpenSans-Semibold", size: fontsize)!, NSAttributedStringKey.foregroundColor: UIColor.white]
+        let lightFont = [NSAttributedString.Key.font: UIFont(name: "OpenSans-Light", size: fontsize)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+        let boldFont = [NSAttributedString.Key.font: UIFont(name: "OpenSans-Semibold", size: fontsize)!, NSAttributedString.Key.foregroundColor: UIColor.white]
         
         var words = input.components(separatedBy: " ")
         let lastWord = words.last!
@@ -112,7 +113,7 @@ class publicMethod{
         } else if (components.second! >= 3) {
             return "\(components.second!)\(self.getShortTimeWord(input: "seconds", shortVersion: shortVersion)) ago"
         } else {
-            return "Just now"
+            return "Just now".localized()
         }
         
     }

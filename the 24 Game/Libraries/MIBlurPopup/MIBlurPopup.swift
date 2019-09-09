@@ -12,7 +12,7 @@ import UIKit
 public protocol MIBlurPopupDelegate: class {
     
     var popupView: UIView { get }
-    var blurEffectStyle: UIBlurEffectStyle { get }
+    var blurEffectStyle: UIBlurEffect.Style { get }
     var initialScaleAmmount: CGFloat { get }
     var animationDuration: TimeInterval { get }
     
@@ -25,7 +25,7 @@ open class MIBlurPopup: NSObject {
     private struct DefaultConfig {
         static let initialScaleAmmount: CGFloat = 0.7
         static let animationDuration: TimeInterval = 0.3
-        static let blurEffectStyle: UIBlurEffectStyle = .dark
+        static let blurEffectStyle: UIBlurEffect.Style = .dark
     }
     
     fileprivate weak var delegate: MIBlurPopupDelegate?

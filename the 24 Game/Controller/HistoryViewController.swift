@@ -43,9 +43,9 @@ class HistoryViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     var popupView: UIView {
-        return self.collectionView
+        return self.view
     }
-    var blurEffectStyle: UIBlurEffectStyle {
+    var blurEffectStyle: UIBlurEffect.Style {
         return .dark
     }
     var initialScaleAmmount: CGFloat {

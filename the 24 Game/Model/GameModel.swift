@@ -119,13 +119,19 @@ class MobileDevice {
 }
 class Settings{
     var notUseTaptic: Bool = false
+    var isTurtorialShown: Bool = false
     
     init(){
-        self.notUseTaptic = UserDefaults.standard.bool(forKey: "notUseTaptic")
+        self.notUseTaptic = UserDefaults.standard.bool(forKey: "settings_notUseTaptic")
+        self.isTurtorialShown = UserDefaults.standard.bool(forKey: "settings_isTurtorialShown")
     }
     func setTaptic(){
         self.notUseTaptic = !self.notUseTaptic
         UserDefaults.standard.set(self.notUseTaptic, forKey: "settings_notUseTaptic")
+    }
+    func setTurtorialShown(){
+        self.isTurtorialShown = true
+        UserDefaults.standard.set(true, forKey: "settings_isTurtorialShown")
     }
 }
 class SingleGame{
@@ -266,7 +272,7 @@ class the24Game{
         case .iPhonePlus:
             self.UIElements["storePriceButtonTitleOffset"] = -80
             break
-        case .iPhoneX:
+        case .iPhoneX, .iPhoneXsMax:
             self.UIElements["storePriceButtonTitleOffset"] = -80
             self.UIElements["statusBarHeight"] = 100
             self.UIElements["menuBottomHeight"] = 25
